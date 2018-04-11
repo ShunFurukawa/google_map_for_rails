@@ -1,24 +1,17 @@
-# README
+# Google map API を RoR で
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*Google Maps JavaScript API* を ｊｓ 内に 追加すると 動く
 
-Things you may want to cover:
+### Memo
 
-* Ruby version
+```
+> MySQL
+>>>  ~ mysql --version
+>>>    mysql  Ver 14.14 Distrib 5.7.18
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Maps table は `float型`でやってみて,     
+Adresses table は `decimal型` でやってみて,      
+     
+float だと 緯度経度情報からの ズレが目立ったので
+decimal が 好み。
