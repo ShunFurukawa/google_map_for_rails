@@ -1,3 +1,7 @@
+<h1>My Google Maps Demo (decimal)</h1>
+
+<div id="map"></div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,3 +21,21 @@
 
 <%= link_to 'Edit', edit_address_path(@address) %> |
 <%= link_to 'Back', addresses_path %>
+
+<script>
+  function initMap() {
+    var uluru = { lat: <%= @address.latitude %>, lng: <%= @address.longitude %> };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: uluru,
+      gestureHandling: 'cooperative'
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=xxxxxxxxx&callback=initMap">
+</script>
